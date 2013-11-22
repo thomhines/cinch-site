@@ -1,0 +1,460 @@
+$black: #29231F;
+$gray: #918D8A;
+$white: #F4F4F4;
+$brown: #543B34;
+$orange: #E16940;
+$lt-orange: #EFAF5B;
+$yellow: #F8DF7B;
+$red: #D82C6B;
+$green: #40C022;;
+$blue: #2D88B5;
+$purple: #9641F0;
+
+$antic: 'Antic Slab', serif;
+$quicksand: 'Quicksand', sans-serif;
+
+
+@import 'mixins.scss';
+
+
+body {
+	background: url(../img/darkdenim3.png);
+	color: $white;
+	font-family: $antic;
+	font-size: 19px;
+	line-height: 27px;
+}
+
+h1 {
+	width: 597px;
+	height: 296px;
+	margin: 0 auto 40px;
+	background: url(../img/cinch.png);
+	background-size: contain;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+h2, h3, h4 {
+	font-family: $quicksand
+}
+
+h2 {
+	margin: 3em 0 1em;
+	padding-bottom: .5em;
+	color: $white;
+	font-size: 45px;
+	border-bottom: 2px solid $white;
+	clear: both;
+}
+
+h3 {
+	margin-bottom: .6em;
+	font-size: 22px;
+	border-bottom: 2px solid $white;
+	text-transform: uppercase;
+}
+
+h4 {
+	margin-bottom: .2em;
+	line-height: 1.2em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+h4 + h4 {
+	margin-top: 1em;
+}
+
+h5 {
+	margin-bottom: 1em;
+	font-size: 22px;
+	line-height: 30px;
+}
+
+h6 {
+	margin-bottom: -9px;
+	font-family: $quicksand;
+	font-size: 14px;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+p + h3 {
+	margin-top: 3em;
+}
+
+p + h4, div + h4 {
+	margin-top: 2em;
+}
+
+b {
+	font-weight: bold;
+}
+
+u {
+	text-decoration: none;
+	border-bottom: 2px solid $white;
+	padding-bottom: 2px;
+}
+
+a {
+	color: $orange;
+	text-decoration: none;
+	@include transition();
+}
+
+a:hover {
+	color: $lt-orange;
+}
+
+
+code {
+	display: block;
+	width: 100%;
+	margin: 10px 0;
+	padding: 7px 15px;
+	color: $gray;
+	font-family: courier new, courier, monospace;
+	font-size: 15px;
+	background: url(../img/white_bed_sheet.png);
+	overflow-x: auto;
+	letter-spacing: .04em;
+}
+
+
+header {
+	padding: 50px;
+	background: url(../img/white_bed_sheet.png);
+	color: $black;	
+}
+
+nav {
+	width: 100%;
+	padding: 15px 0;
+	background: $black;
+	z-index: 50;
+	@include shadow();
+	
+	ul {
+		width: 650px;
+		margin: 0 0 0 270px;
+		@include transition();
+	}
+	
+	li {
+		display: inline-block;
+		&:before {
+			content: "●";
+			margin: 0 20px;
+		}
+		&:first-child:before {
+			content: "";
+			margin: 0;
+		}
+	}
+	a {
+		font-family: $quicksand;
+		color: $white;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	
+	.github, .download {
+		position: fixed;
+		top: 11px;
+		right: 50%;
+		margin-right: -560px;
+		z-index: 100;
+	}
+	
+	.download {
+		padding: 2px 16px;
+		font-size: 12px;
+		font-weight: bold;
+		color: $white;
+		@include rounded();
+		@include gradient(#E87047, #BD461D);
+			
+		&:hover {
+			color: $black;
+		}
+	}
+	
+	.github {
+		width: 33px;
+		height: 33px;
+		margin-right: -380px;
+		background: url(../img/github.png);
+		text-indent: -9999px;
+		overflow: hidden;
+
+		@include rounded(16px);
+		&:hover {
+			background-color: $black;
+		}
+	}
+	
+	
+}
+
+
+.is-sticky {
+
+	nav {
+		
+	}
+
+	ul {
+		margin: 0;
+	}
+	
+	.download {
+		color: $black;
+		&:hover {
+			color: $white;
+		}
+	}
+	
+	.github {
+		-webkit-box-shadow: inset 0 0 0 1px #29231f, 0 0 0 1px #29231f;
+		box-shadow: inset 0 0 0 1px #29231f, 0 0 0 1px #29231f;
+		&:hover {
+			background-color: $white;
+		}
+	}
+}
+
+section {
+	padding: 0 0 20px;
+}
+
+
+footer {
+	background: $black;
+	padding: 30px 0;
+	@include clearfix();
+	@include shadow(0, -4px);
+	
+	h2 {
+		font-size: 34px;
+		margin-top: .3em;
+	}
+	
+	h4 span {
+		font-family: $antic;
+		font-size: .7em;
+		font-weight: normal;
+		text-transform: none;
+	}
+}
+
+
+.container {
+	position: relative;
+	width: 1120px;
+	margin: auto;
+}
+
+.column {
+	width: 360px;
+	margin: 0 0 90px 20px;
+	float: left;
+}
+
+.column:first-of-type {
+	margin-left: 0;
+}
+
+.tagline {
+	color: $brown;
+	font-size: 22px;
+	text-align: center;
+	border-bottom: none;
+}
+
+.description {
+	margin: 100px 50px;
+	font-family: $antic;
+	font-size: 33px;
+	font-weight: normal;
+	line-height: 44px;
+	text-align: center;
+	text-transform: none;
+}
+
+.logo {
+	display: inline-block;
+	margin: -5px 13px 30px;
+	height: 47px;
+	
+	a {
+		display: block;
+		width: 100%;
+		height: 100%;
+		text-indent: -9999px;
+		overflow: hidden;
+	}
+	
+	&.less {
+		width: 75px;
+		background: url(../img/less.png);
+	}
+	&.sass {
+		width: 62px;
+		background: url(../img/sass.png);
+	}
+	&.coffeescript {
+		width: 108px;
+		background: url(../img/coffee.png);
+	}
+}
+
+
+
+
+.setting {
+	margin-top: 45px;
+	color: $lt-orange;
+	font-size: 25px;
+	font-weight: normal;
+}
+
+h3 + .setting {
+	margin-top: 0;
+}
+
+.default {
+	color: $orange;
+}
+
+.options {
+	font-size: 19px;
+	display: inline-block;
+}
+
+.red {
+	color: $red;
+}
+
+.green {
+	color: $green;
+}
+
+.blue {
+	color: $blue;
+}
+
+.purple {
+	color: $purple;
+}
+
+.code_example {
+	position: relative;
+	height: 200px;
+}
+
+.code_example code {
+	position: absolute;
+	top: 50px;
+	
+	span {
+		font-weight: bold;
+	}
+}
+
+.code_label {
+	position: absolute;
+	color: $white;
+	font-family: $quicksand;
+	font-size: 14px;
+	line-height: 1.3em;
+	text-transform: uppercase;
+	
+	i {
+		margin-left: -23px;	
+	}
+	
+	&:nth-of-type(1) {
+		top: 30px;
+		left: 254px;
+	}
+	
+	&:nth-of-type(2) {
+		top: 107px;
+		left: 353px;
+	}
+	
+	&:nth-of-type(3) {
+		top: 30px;
+		left: 597px;
+	}
+	
+	&:nth-of-type(4) {
+		top: 107px;
+		left: 700px;
+	}
+	
+	&:nth-of-type(2), &:nth-of-type(4) {
+		width: 230px;
+	}
+	
+	.red {
+		color: $red;
+	}
+	
+	.green {
+		color: $green;
+	}
+	
+	.purple {
+		color: $purple;
+	}
+	
+	.blue {
+		color: $blue;
+	}
+}
+
+.css.code_example .code_label {
+	&:nth-of-type(1) {
+		left: 250px;
+	}
+	
+	&:nth-of-type(2) {
+		left: 427px;
+	}
+	
+	&:nth-of-type(3) {
+		left: 565px;
+	}
+	
+	&:nth-of-type(4) {
+		left: 789px;
+	}
+	
+}
+
+
+.caption {
+	margin-top: -4px;
+	font-size: 14px;
+	line-height: 23px;
+}
+
+.note {
+	color: $yellow;
+}
+
+.cinchicon {
+	width: 30px;
+	height: 30px;
+	margin: 60px auto;
+	background: url(../img/cinchicon.png);
+	@include shadow(2px, 2px, 2px, rgba(0,0,0,.5));
+}
