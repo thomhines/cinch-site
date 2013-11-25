@@ -14,6 +14,9 @@ $antic: 'Antic Slab', serif;
 $quicksand: 'Quicksand', sans-serif;
 
 
+$font-size: 19px;
+
+
 @import 'mixins.scss';
 
 
@@ -21,14 +24,14 @@ body {
 	background: url(../img/darkdenim3.png);
 	color: $white;
 	font-family: $antic;
-	font-size: 19px;
-	line-height: 27px;
+	font-size: $font-size;
+	line-height: 1.5em;
 }
 
 h1 {
 	width: 597px;
 	height: 296px;
-	margin: 0 auto 40px;
+	margin: 0 auto 2em;
 	background: url(../img/cinch.png);
 	background-size: contain;
 	text-indent: -9999px;
@@ -40,17 +43,17 @@ h2, h3, h4 {
 }
 
 h2 {
-	margin: 3em 0 1em;
-	padding-bottom: .5em;
+	margin: 0 0 1em;
+	padding: 3em 0 .5em;
 	color: $white;
-	font-size: 45px;
+	font-size: 2.2em;
 	border-bottom: 2px solid $white;
 	clear: both;
 }
 
 h3 {
 	margin-bottom: .6em;
-	font-size: 22px;
+	font-size: 1.2em;
 	border-bottom: 2px solid $white;
 	text-transform: uppercase;
 }
@@ -68,16 +71,16 @@ h4 + h4 {
 
 h5 {
 	margin-bottom: 1em;
-	font-size: 22px;
-	line-height: 30px;
+	font-size: 1.2em;
+	line-height: 1.4em;
 }
 
 h6 {
-	margin-bottom: -9px;
+	margin-bottom: -0.8em;
 	font-family: $quicksand;
-	font-size: 14px;
+	font-size: .75em;
 	font-weight: bold;
-	letter-spacing: 2px;
+	letter-spacing: .15em;
 	text-transform: uppercase;
 }
 
@@ -114,29 +117,44 @@ a:hover {
 }
 
 
+ol {
+	margin-bottom: 1em;
+	list-style: decimal;
+	list-style-position: inside;
+}
+
+ol li {
+	margin-bottom: .6em;
+	font-size: 1.4em;
+	line-height: 1.5em;
+}
+
 code {
 	display: block;
 	width: 100%;
-	margin: 10px 0;
-	padding: 7px 15px;
+	margin: .6em 0;
+	padding: .5em .8em;
 	color: $gray;
 	font-family: courier new, courier, monospace;
-	font-size: 15px;
+	font-size: .8em;
 	background: url(../img/white_bed_sheet.png);
 	overflow-x: auto;
 	letter-spacing: .04em;
 }
 
+code + h3 {
+	margin-top: 3em;
+}
 
 header {
-	padding: 50px;
+	padding: 2.5em;
 	background: url(../img/white_bed_sheet.png);
 	color: $black;	
 }
 
 nav {
 	width: 100%;
-	padding: 15px 0;
+	padding: .8em 0;
 	background: $black;
 	z-index: 50;
 	@include shadow();
@@ -151,7 +169,7 @@ nav {
 		display: inline-block;
 		&:before {
 			content: "●";
-			margin: 0 20px;
+			margin: 0 1.1em 0 1em;
 		}
 		&:first-child:before {
 			content: "";
@@ -242,7 +260,7 @@ footer {
 	@include shadow(0, -4px);
 	
 	h2 {
-		font-size: 34px;
+		font-size: 1.7em;
 		margin-top: .3em;
 	}
 	
@@ -273,7 +291,7 @@ footer {
 
 .tagline {
 	color: $brown;
-	font-size: 22px;
+	font-size: 1.2em;
 	text-align: center;
 	border-bottom: none;
 }
@@ -281,16 +299,16 @@ footer {
 .description {
 	margin: 100px 50px;
 	font-family: $antic;
-	font-size: 33px;
+	font-size: 1.8em;
+	line-height: 1.6em;
 	font-weight: normal;
-	line-height: 44px;
 	text-align: center;
 	text-transform: none;
 }
 
 .logo {
 	display: inline-block;
-	margin: -5px 13px 30px;
+	margin: 30px 13px 0px;
 	height: 47px;
 	
 	a {
@@ -316,12 +334,15 @@ footer {
 }
 
 
+.logo + h4 {
+	margin-top: 8px;
+}
 
 
 .setting {
 	margin-top: 45px;
 	color: $lt-orange;
-	font-size: 25px;
+	font-size: 1.2em;
 	font-weight: normal;
 }
 
@@ -334,8 +355,9 @@ h3 + .setting {
 }
 
 .options {
-	font-size: 19px;
 	display: inline-block;
+	margin-bottom: 1em;
+	font-size: 1em;
 }
 
 .red {
@@ -372,7 +394,7 @@ h3 + .setting {
 	position: absolute;
 	color: $white;
 	font-family: $quicksand;
-	font-size: 14px;
+	font-size: .75em;
 	line-height: 1.3em;
 	text-transform: uppercase;
 	
@@ -443,8 +465,8 @@ h3 + .setting {
 
 .caption {
 	margin-top: -4px;
-	font-size: 14px;
-	line-height: 23px;
+	font-size: .75em;
+	line-height: 1.5em;
 }
 
 .note {

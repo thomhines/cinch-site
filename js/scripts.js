@@ -2,8 +2,15 @@ $(function() {
 
 	$("nav").sticky();
 	
-	$('nav a').click(function() {
-		$.scrollTo($(this).attr('target'), 300, {offset:-95});
+	$('nav a').click(function(e) {
+		e.preventDefault();
+		$.scrollTo($(this).attr('href'), 300);
+	});
+
+
+	$('a[href="cinch.zip"]').on('click', function() {
+		console.log('downloading...');
+		ga('send', 'event', 'button', 'click', 'download button');
 	});
 
 })

@@ -35,6 +35,7 @@
 </head>
 
 <body>
+<?php include_once('ga.php'); ?>
 
 	<header>
 		<div class="container">
@@ -46,10 +47,10 @@
 	<nav>
 		<div class="container">
 			<ul>
-				<li><a href="javascript:void(0)" target="#features">Features</a></li>
-				<li><a href="javascript:void(0)" target="#how_to_use">How to Use</a></li>
-				<li><a href="javascript:void(0)" target="#settings">Settings</a></li>
-				<li><a href="javascript:void(0)" target="#about">About</a></li>
+				<li><a href="#features">Features</a></li>
+				<li><a href="#how_to_use">How to Use</a></li>
+				<li><a href="#settings">Settings</a></li>
+				<li><a href="#about">About</a></li>
 			</ul>
 			<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
 			<a class="download button" href="cinch.zip">Download cinch 0.3</a>
@@ -68,13 +69,15 @@
 				<h3>Good to Developers</h3>
 				<h4>Easy to install and use</h4>
 				<p>Installation is a cinch (pun intended). See instructions below.</p>
-	
-				<h4>Pre-Processor Handling</h4>
-				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript.</p>
+				
 				
 				<div class="less logo"><a href="http://lesscss.org/">LESS</a></div>
 				<div class="sass logo"><a href="http://sass-lang.com/">Sass</a></div>
 				<div class="coffeescript logo"><a href="http://coffeescript.org/">CoffeeScript</a></div>
+	
+				<h4>Pre-Processor Handling</h4>
+				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript.</p>
+				
 				
 				<h4>Google Hosted Libraries</h4>
 				<p>Built-in access to all libraries in <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Libraries</a> service.</p>
@@ -111,13 +114,33 @@
 			
 			<!-- HOW TO USE -->
 			<h2 id="how_to_use">How to Use Cinch</h2>
-			<p>To install, just upload <a href="cinch.zip">cinch</a> to the root folder of your site, and replace the &lt;script&gt; and &lt;link&gt; tags in your HTML with a tag that points to your &lsquo;cinch&rsquo; folder.</p>
+			<p>To install, just</p>
+			<ol>
+				<li>upload <a href="cinch.zip">cinch</a> to the root folder of your site,</li>
+				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder,</li>
+				<li>add your filenames</li>
+			</ol>
+			<p>and you're done!</p>
 			
 			
-			<h3>Examples</h3>
+			<h6>Example:</h6>
+			
+			<code>&lt;script src="<b>/js/jquery.min.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
+			&lt;script src="<b>/js/functions.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
+			&lt;script src="<b>/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
+		
+			<p>turns into:</p>
+			
+			<code>&lt;script src="<b class="red">/cinch/?files=/js/jquery.min.js,/js/functions.js,/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
+			
+			
+						
+			<h3>More Examples</h3>
 			
 			<p>All settings can be applied to any group of files. Settings can be adjusted by adding them to the query string in a &lt;script&gt; or &lt;link&gt; tag, separated by ampersands (&amp;), as shown below.</p>
-			
+
+	
+
 			<h6>Javascript:</h6>
 			<div class="code_example js">
 				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery/1.10.2]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=true</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
