@@ -307,8 +307,7 @@ footer {
 }
 
 .logo {
-	display: inline-block;
-	margin: 30px 13px 0px;
+	margin: 35px auto 15px;
 	height: 47px;
 	
 	a {
@@ -319,6 +318,17 @@ footer {
 		overflow: hidden;
 	}
 	
+	&.cake {
+		margin-top: 13px;
+		width: 47px;
+		height: 65px;
+		background: url(../img/cake.png);		
+	}
+	&.less, &.sass, &.coffeescript {
+		display: inline-block;
+		margin-left: 13px;
+		margin-right: 13px;
+	}
 	&.less {
 		width: 75px;
 		background: url(../img/less.png);
@@ -330,6 +340,46 @@ footer {
 	&.coffeescript {
 		width: 108px;
 		background: url(../img/coffee.png);
+	}
+	&.google {
+		width: 57px;
+		height: 45px;
+		background: url(../img/google.png);		
+	}
+	&.auto {
+		width: 58px;
+		height: 54px;
+		background: url(../img/auto.png);		
+	}
+	&.rabbit {
+		width: 65px;
+		height: 43px;
+		background: url(../img/rabbit.png);		
+	}
+	&.cache {
+		width: 47px;
+		height: 65px;
+		background: url(../img/cache.png);		
+	}
+	&.headers {
+		width: 62px;
+		height: 44px;
+		background: url(../img/304.png);		
+	}
+	&.concat {
+		width: 139px;
+		height: 43px;
+		background: url(../img/concat.png);		
+	}
+	&.minify {
+		width: 139px;
+		height: 43px;
+		background: url(../img/minify.png);		
+	}
+	&.gzip {
+		width: 139px;
+		height: 43px;
+		background: url(../img/gzip.png) no-repeat;		
 	}
 }
 

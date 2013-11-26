@@ -67,45 +67,53 @@
 			
 			<div class="column">
 				<h3>Good to Developers</h3>
+				<div class="cake logo"></div>
 				<h4>Easy to install and use</h4>
-				<p>Installation is a cinch (pun intended). See instructions below.</p>
-				
+				<p><a href="#how_to_use">Installation</a> is a cinch (pun intended). File type detection, minification, concatination, pre-processor handling, cacheing, compression. And it's all automatic.</p>
 				
 				<div class="less logo"><a href="http://lesscss.org/">LESS</a></div>
 				<div class="sass logo"><a href="http://sass-lang.com/">Sass</a></div>
 				<div class="coffeescript logo"><a href="http://coffeescript.org/">CoffeeScript</a></div>
-	
 				<h4>Pre-Processor Handling</h4>
 				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript.</p>
 				
-				
+				<div class="google logo"></div>
 				<h4>Google Hosted Libraries</h4>
-				<p>Built-in access to all libraries in <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Libraries</a> service.</p>
-				
+				<p>Built-in access to all libraries in <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Libraries</a> service.</p>				
+<!--
+				<div class="auto logo"></div>
 				<h4>Everything Automatic</h4>
-				<p>File type detection, minification, concatination, pre-processor handling, cacheing, compression. And it's all automatic.</p>
+-->
+
+				<p></p>
 			</div>
 			
 			<div class="column">
 				<h3>Good to Servers</h3>
+				<div class="rabbit logo"></div>
 				<h4>Light-Weight and Fast</h4>
 				<p>Don&rsquo;t need minification? Only using .less files? Cinch loads only the dependencies you need, keeping server load small and speeding up execution.</p>
 				
+				<div class="cache logo"></div>
 				<h4>Smart Cacheing</h4>
 				<p>Cinch creates a static version of your combined JS/CSS files anytime changes have been detected in your site&rsquo;s files, which it will serve to users until new changes are made.</p>
 				
+				<div class="headers logo"></div>
 				<h4>Efficient Headers</h4>
-				<p>If the user already has the latest version of your files, &lsquo;304 Not Modified&rsquo; headers are sent to the user instead of sending the site files again.andling, cacheing, compression. Everything automatically.</p>
+				<p>If the user already has the latest version of your files, &lsquo;304 Not Modified&rsquo; headers are sent to the user instead of sending the site files again.</p>
 			</div>
 			
 			<div class="column">
 				<h3>Good to Users</h3>
+				<div class="concat logo"></div>
 				<h4>Concatenation</h4>
 				<p>Cinch combines all of your JS/CSS files into just one file. This reduces the number of HTTP requests your users browsers will need to make.</p>
 				
+				<div class="minify logo"></div>
 				<h4>Minification</h4>
 				<p>Minifying files gets rid of all unneccesary parts of your files, decreasing the amount of bandwidth and time needed to download them.</p>
 				
+				<div class="gzip logo"></div>
 				<h4>GZIP Compression</h4>
 				<p>Cinch uses gzip when available to compress files even further before sending them to users.</p>
 			</div>
