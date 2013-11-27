@@ -1,6 +1,6 @@
 $black: #29231F;
 $gray: #918D8A;
-$white: #F4F4F4;
+$white: #F1F0ED;
 $brown: #543B34;
 $orange: #E16940;
 $lt-orange: #EFAF5B;
@@ -45,9 +45,9 @@ h2, h3, h4 {
 h2 {
 	margin: 0 0 1em;
 	padding: 3em 0 .5em;
-	color: $white;
+	color: $lt-orange;
 	font-size: 2.2em;
-	border-bottom: 2px solid $white;
+	border-bottom: 2px solid $lt-orange;
 	clear: both;
 }
 
@@ -169,7 +169,7 @@ nav {
 		display: inline-block;
 		&:before {
 			content: "●";
-			margin: 0 1.1em 0 1em;
+			margin: 0 .2em 0 0;
 		}
 		&:first-child:before {
 			content: "";
@@ -177,6 +177,7 @@ nav {
 		}
 	}
 	a {
+		padding: 1.1em;
 		font-family: $quicksand;
 		color: $white;
 		text-decoration: none;
@@ -188,6 +189,7 @@ nav {
 		top: 11px;
 		right: 50%;
 		margin-right: -560px;
+		padding: 0;
 		z-index: 100;
 	}
 	
@@ -229,7 +231,7 @@ nav {
 	}
 
 	ul {
-		margin: 0;
+		margin: 0 0 0 -20px;
 	}
 	
 	.download {
@@ -260,8 +262,8 @@ footer {
 	@include shadow(0, -4px);
 	
 	h2 {
+		padding-top: 2em;
 		font-size: 1.7em;
-		margin-top: .3em;
 	}
 	
 	h4 span {
@@ -281,7 +283,7 @@ footer {
 
 .column {
 	width: 360px;
-	margin: 0 0 90px 20px;
+	margin: 0 0 0 20px;
 	float: left;
 }
 
@@ -297,7 +299,7 @@ footer {
 }
 
 .description {
-	margin: 100px 50px;
+	margin: 100px 50px 0;
 	font-family: $antic;
 	font-size: 1.8em;
 	line-height: 1.6em;
@@ -394,7 +396,7 @@ footer {
 
 .setting {
 	margin-top: 45px;
-	color: $lt-orange;
+	color: $yellow;
 	font-size: 1.2em;
 	font-weight: normal;
 }
@@ -435,7 +437,7 @@ h3 + .setting {
 
 .code_example {
 	position: relative;
-	height: 200px;
+	height: 160px;
 	margin-top: -20px;
 }
 
@@ -528,7 +530,7 @@ h3 + .setting {
 }
 
 .note {
-	color: $yellow;
+	border-bottom: 2px solid $white;
 }
 
 .cinchicon {

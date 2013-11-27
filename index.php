@@ -53,7 +53,7 @@
 				<li><a href="#about">About</a></li>
 			</ul>
 			<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
-			<a class="download button" href="cinch.zip">Download cinch 0.3</a>
+			<a class="download button" href="https://github.com/thomhines/cinch/archive/0.4.zip">Download cinch 0.4</a>
 		</div>
 	</nav>
 	
@@ -124,7 +124,7 @@
 			<h2 id="how_to_use">How to Use Cinch</h2>
 			<p>To install, just:</p>
 			<ol>
-				<li>upload <a href="cinch.zip">cinch</a> to the root folder of your site</li>
+				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.4.zip">cinch</a> to the root folder of your site</li>
 				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder</li>
 				<li>add your filenames</li>
 			</ol>
