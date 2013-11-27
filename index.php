@@ -122,16 +122,15 @@
 			
 			<!-- HOW TO USE -->
 			<h2 id="how_to_use">How to Use Cinch</h2>
-			<p>To install, just</p>
+			<p>To install, just:</p>
 			<ol>
-				<li>upload <a href="cinch.zip">cinch</a> to the root folder of your site,</li>
-				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder,</li>
+				<li>upload <a href="cinch.zip">cinch</a> to the root folder of your site</li>
+				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder</li>
 				<li>add your filenames</li>
 			</ol>
-			<p>and you're done!</p>
 			
 			
-			<h6>Example:</h6>
+			<h3 class="options">Example</h3>
 			
 			<code>&lt;script src="<b>/js/jquery.min.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
 			&lt;script src="<b>/js/functions.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
@@ -162,7 +161,7 @@
 			<div class="code_example css">
 				<code>&lt;link href="/cinch/?<span class="red">files=/css/reset.css,</span><span class="green">!</span><span class="red">/css/layout.</span><span class="purple">less</span><span class="red">,/css/text.sass</span>&<span class="blue">force=true</span>" type="text/css"&gt;</code>
 				<div class="code_label"><i class="red icon-down"></i> list of .CSS files</div>
-				<div class="code_label"><i class="green icon-up"></i> Use &lsquo;!&rsquo; to disable minification on a file</div>
+				<div class="code_label"><i class="green icon-up"></i> Use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
 				<div class="code_label"><i class="purple icon-down"></i> it's ok to mix different file types</div>
 				<div class="code_label"><i class="blue icon-up"></i> force cinch to always rebuild cache</div>
 			</div>

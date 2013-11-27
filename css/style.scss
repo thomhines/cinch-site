@@ -76,7 +76,6 @@ h5 {
 }
 
 h6 {
-	margin-bottom: -0.8em;
 	font-family: $quicksand;
 	font-size: .75em;
 	font-weight: bold;
@@ -120,11 +119,12 @@ a:hover {
 ol {
 	margin-bottom: 1em;
 	list-style: decimal;
-	list-style-position: inside;
+	list-style-position: outside;
 }
 
 ol li {
-	margin-bottom: .6em;
+	width: 60%;
+	margin: 1em auto;
 	font-size: 1.4em;
 	line-height: 1.5em;
 }
@@ -307,7 +307,9 @@ footer {
 }
 
 .logo {
-	margin: 35px auto 15px;
+	margin: 35px auto 20px;
+	padding-right: 80px;
+	background-repeat: no-repeat;
 	height: 47px;
 	
 	a {
@@ -322,64 +324,65 @@ footer {
 		margin-top: 13px;
 		width: 47px;
 		height: 65px;
-		background: url(../img/cake.png);		
+		background-image: url(../img/cake.png);		
 	}
 	&.less, &.sass, &.coffeescript {
 		display: inline-block;
 		margin-left: 13px;
 		margin-right: 13px;
+		padding-right: 0;
 	}
 	&.less {
 		width: 75px;
-		background: url(../img/less.png);
+		background-image: url(../img/less.png);
 	}
 	&.sass {
 		width: 62px;
-		background: url(../img/sass.png);
+		background-image: url(../img/sass.png);
 	}
 	&.coffeescript {
 		width: 108px;
-		background: url(../img/coffee.png);
+		background-image: url(../img/coffee.png);
 	}
 	&.google {
 		width: 57px;
 		height: 45px;
-		background: url(../img/google.png);		
+		background-image: url(../img/google.png);		
 	}
 	&.auto {
 		width: 58px;
 		height: 54px;
-		background: url(../img/auto.png);		
+		background-image: url(../img/auto.png);		
 	}
 	&.rabbit {
 		width: 65px;
 		height: 43px;
-		background: url(../img/rabbit.png);		
+		background-image: url(../img/rabbit.png);		
 	}
 	&.cache {
 		width: 47px;
 		height: 65px;
-		background: url(../img/cache.png);		
+		background-image: url(../img/cache.png);		
 	}
 	&.headers {
 		width: 62px;
 		height: 44px;
-		background: url(../img/304.png);		
+		background-image: url(../img/304.png);		
 	}
 	&.concat {
 		width: 139px;
 		height: 43px;
-		background: url(../img/concat.png);		
+		background-image: url(../img/concat.png);		
 	}
 	&.minify {
 		width: 139px;
 		height: 43px;
-		background: url(../img/minify.png);		
+		background-image: url(../img/minify.png);		
 	}
 	&.gzip {
 		width: 139px;
 		height: 43px;
-		background: url(../img/gzip.png) no-repeat;		
+		background-image: url(../img/gzip.png);		
 	}
 }
 
@@ -410,6 +413,10 @@ h3 + .setting {
 	font-size: 1em;
 }
 
+.exclamation {
+	font-family: helvetica, arial, sans-serif;
+}
+
 .red {
 	color: $red;
 }
@@ -429,6 +436,7 @@ h3 + .setting {
 .code_example {
 	position: relative;
 	height: 200px;
+	margin-top: -20px;
 }
 
 .code_example code {
