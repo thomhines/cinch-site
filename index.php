@@ -52,8 +52,10 @@
 				<li><a href="#settings">Settings</a></li>
 				<li><a href="#about">About</a></li>
 			</ul>
-			<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
-			<a class="download button" href="https://github.com/thomhines/cinch/archive/0.4.zip">Download cinch 0.4</a>
+			<div class="download_buttons">
+				<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
+				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.4.zip">Download cinch 0.4</a>
+			</div>
 		</div>
 	</nav>
 	
@@ -69,7 +71,7 @@
 				<h3>Good to Developers</h3>
 				<div class="cake logo"></div>
 				<h4>Easy to install and use</h4>
-				<p><a href="#how_to_use">Installation</a> is a cinch (pun intended). File type detection, minification, concatination, pre-processor handling, cacheing, compression. And it's all automatic.</p>
+				<p><a href="#how_to_use">Installation</a> is a cinch (pun intended). Cinch has minification, concatenation, pre-processors, cacheing, compression. And it's all automatic.</p>
 				
 				<div class="less logo"><a href="http://lesscss.org/">LESS</a></div>
 				<div class="sass logo"><a href="http://sass-lang.com/">Sass</a></div>
@@ -132,9 +134,7 @@
 			
 			<h3 class="options">Example</h3>
 			
-			<code>&lt;script src="<b>/js/jquery.min.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
-			&lt;script src="<b>/js/functions.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>
-			&lt;script src="<b>/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
+			<code>&lt;script src="<b>/js/jquery.min.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>&lt;script src="<b>/js/functions.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>&lt;script src="<b>/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
 		
 			<p>turns into:</p>
 			
@@ -151,19 +151,19 @@
 			<h6>Javascript:</h6>
 			<div class="code_example js">
 				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery/1.10.2]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=true</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
-				<div class="code_label"><i class="red icon-down"></i> list of .JS files</div>
-				<div class="code_label"><i class="green icon-up"></i> include jquery from the Google libraries</div>
-				<div class="code_label"><i class="purple icon-down"></i> turn off minification</div>
-				<div class="code_label"><i class="blue icon-up"></i> turn on debug output</div>
+				<div class="code_label">list of .JS files</div>
+				<div class="code_label">include jquery from the Google libraries</div>
+				<div class="code_label">turn off minification</div>
+				<div class="code_label">turn on debug output</div>
 			</div>
 			
 			<h6>CSS:</h6>
 			<div class="code_example css">
 				<code>&lt;link href="/cinch/?<span class="red">files=/css/reset.css,</span><span class="green">!</span><span class="red">/css/layout.</span><span class="purple">less</span><span class="red">,/css/text.sass</span>&<span class="blue">force=true</span>" type="text/css"&gt;</code>
-				<div class="code_label"><i class="red icon-down"></i> list of .CSS files</div>
-				<div class="code_label"><i class="green icon-up"></i> Use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
-				<div class="code_label"><i class="purple icon-down"></i> it's ok to mix different file types</div>
-				<div class="code_label"><i class="blue icon-up"></i> force cinch to always rebuild cache</div>
+				<div class="code_label">list of .CSS files</div>
+				<div class="code_label">use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
+				<div class="code_label">it's ok to mix different file types</div>
+				<div class="code_label">force cinch to always rebuild cache</div>
 			</div>
 			
 			
@@ -261,13 +261,13 @@
 				<span>(minification and concatenization)</span><br>
 				PHP 4.3+</h4>
 				
-				<h4>Sass/SCSS Compiler<br>
+				<h4>Sass/SCSS Parser<br>
 				5.1+ <span>(Maybe? This is just a guess)</span></h4>
 				
-				<h4>LESS Compiler<br>
+				<h4>LESS Parser<br>
 				PHP 5.1+</h4>
 				
-				<h4>CoffeeScript Compiler<br>
+				<h4>CoffeeScript Parser<br>
 				PHP 5.3+</h4>
 			</div>
 			<div class="column">

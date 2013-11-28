@@ -13,8 +13,10 @@ $purple: #9641F0;
 $antic: 'Antic Slab', serif;
 $quicksand: 'Quicksand', sans-serif;
 
-
-$font-size: 19px;
+$big-screen: 1200px;
+$medium-screen: 900px;
+$tablet: 768px;
+$mobile: 420px;
 
 
 @import 'mixins.scss';
@@ -24,18 +26,49 @@ body {
 	background: url(../img/darkdenim3.png);
 	color: $white;
 	font-family: $antic;
-	font-size: $font-size;
+	font-size: 19px;
 	line-height: 1.5em;
+	
+	@media screen and (min-width: $medium-screen) and (max-width: $big-screen) {
+		font-size: 17px;
+		line-height: 1.5em;
+	}
+	@media screen and (min-width: $tablet) and (max-width: $medium-screen) {
+		font-size: 16px;
+		line-height: 1.5em;
+	}
+	@media screen and (min-width: $mobile) and (max-width: $tablet) {
+		font-size: 14px;
+		line-height: 1.3em;
+	}
+	@media screen and (max-width: $mobile) {
+		font-size: 13px;
+		line-height: 1.2em;
+	}
 }
 
 h1 {
 	width: 597px;
 	height: 296px;
 	margin: 0 auto 2em;
-	background: url(../img/cinch.png);
+	background: url(../img/cinch.png) center center;
 	background-size: contain;
 	text-indent: -9999px;
 	overflow: hidden;
+	
+	@media screen and (max-width: $tablet) {
+		width: 90%;
+		height: $tablet/3;
+		margin-bottom: .3em;
+		background-repeat: no-repeat;
+	}
+	
+	@media screen and (max-width: $mobile) {
+		width: 90%;
+		height: $mobile/3;
+		margin-bottom: 0;
+		background-repeat: no-repeat;
+	}
 }
 
 h2, h3, h4 {
@@ -49,6 +82,10 @@ h2 {
 	font-size: 2.2em;
 	border-bottom: 2px solid $lt-orange;
 	clear: both;
+}
+
+h2 + h5 {
+	margin: -1.2em 0 1.8em;
 }
 
 h3 {
@@ -127,6 +164,10 @@ ol li {
 	margin: 1em auto;
 	font-size: 1.4em;
 	line-height: 1.5em;
+	
+	@media screen and (max-width: $tablet) {
+		width: 80%;
+	}
 }
 
 code {
@@ -134,6 +175,7 @@ code {
 	width: 100%;
 	margin: .6em 0;
 	padding: .5em .8em;
+	white-space: pre;
 	color: $gray;
 	font-family: courier new, courier, monospace;
 	font-size: .8em;
@@ -156,12 +198,13 @@ nav {
 	width: 100%;
 	padding: .8em 0;
 	background: $black;
+	text-align: center;
 	z-index: 50;
 	@include shadow();
 	
 	ul {
-		width: 650px;
-		margin: 0 0 0 270px;
+		display: inline-block;
+		margin: 0 auto;
 		@include transition();
 	}
 	
@@ -175,6 +218,12 @@ nav {
 			content: "";
 			margin: 0;
 		}
+		
+		@media screen and (max-width: $mobile) {
+			&:last-child {
+				display: none;
+			}
+		}
 	}
 	a {
 		padding: 1.1em;
@@ -184,18 +233,27 @@ nav {
 		text-transform: uppercase;
 	}
 	
-	.github, .download {
+	.download_buttons {
 		position: fixed;
 		top: 11px;
 		right: 50%;
 		margin-right: -560px;
 		padding: 0;
 		z-index: 100;
+		a {
+			display: inline-block;
+			padding: 0;
+			vertical-align: top;
+		}
+		@media screen and (max-width: $big-screen) {
+			right: 11px;
+			margin-right: 0;
+		}
 	}
-	
-	.download {
+
+	a.download {
 		padding: 2px 16px;
-		font-size: 12px;
+		font-size: .7em;
 		font-weight: bold;
 		color: $white;
 		@include rounded();
@@ -204,13 +262,24 @@ nav {
 		&:hover {
 			color: $black;
 		}
+		
+		@media screen and (max-width: $tablet) {
+			font-size: 0;
+			&:before {
+				content: "download";
+				padding: 2px 4px;
+				font-size: .6rem;
+				vertical-align: bottom;
+			}
+		}
 	}
 	
 	.github {
 		width: 33px;
 		height: 33px;
-		margin-right: -380px;
+		margin-top: -1px;
 		background: url(../img/github.png);
+		background-size: contain;
 		text-indent: -9999px;
 		overflow: hidden;
 
@@ -218,16 +287,30 @@ nav {
 		&:hover {
 			background-color: $black;
 		}
+		@media screen and (max-width: $tablet) {
+			width: 24px;
+			height: 24px;
+			background-color: $white;
+			@include rounded(12px);
+		}
+		@media screen and (max-width: $mobile) {
+			width: 20px;
+			height: 20px;
+			background-color: $white;
+			@include rounded(10px);
+		}
 	}
-	
-	
 }
 
 
 .is-sticky {
 
 	nav {
-		
+		text-align: left;		
+		@media screen and (max-width: $mobile) {
+			position: relative !important;
+			text-align: center;
+		}
 	}
 
 	ul {
@@ -248,6 +331,32 @@ nav {
 			background-color: $white;
 		}
 	}
+	
+	
+	@media screen and (max-width: $mobile) {
+		nav {
+			position: relative !important;
+			text-align: center;			
+		}
+		.download {
+			color: $white;
+			&:hover {
+				color: $black;
+			}
+			
+		}
+	
+		.github {
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			background-color: $white;
+			&:hover {
+				background-color: $black;
+			}
+		}
+	}
+	
+
 }
 
 section {
@@ -278,13 +387,38 @@ footer {
 .container {
 	position: relative;
 	width: 1120px;
-	margin: auto;
+	margin: auto;	
+	
+	@media screen and (max-width: $big-screen) {
+		width: 95%;
+		margin-left: 3%;
+	}
 }
 
 .column {
+	float: left;
 	width: 360px;
 	margin: 0 0 0 20px;
-	float: left;
+	text-align: center;
+	
+	h4, p {
+		text-align: left;	
+		@media screen and (max-width: $medium-screen) {
+			text-align: center;
+		}
+	}
+
+	@media screen and (max-width: $big-screen) {
+		width: 30%;
+		margin-left: 3%;
+	}
+	@media screen and (max-width: $medium-screen) {
+		width: 100%;
+		margin-left: 0;
+		h3 {
+			margin-top: 3em;
+		}
+	}
 }
 
 .column:first-of-type {
@@ -309,7 +443,8 @@ footer {
 }
 
 .logo {
-	margin: 35px auto 20px;
+	display: inline-block;
+	margin: 35px 5px 0;
 	padding-right: 80px;
 	background-repeat: no-repeat;
 	height: 47px;
@@ -320,6 +455,10 @@ footer {
 		height: 100%;
 		text-indent: -9999px;
 		overflow: hidden;
+	}
+	
+	@media screen and (max-width: $medium-screen) {
+		padding-right: 0;
 	}
 	
 	&.cake {
@@ -344,6 +483,7 @@ footer {
 	}
 	&.coffeescript {
 		width: 108px;
+		margin-top: 0;
 		background-image: url(../img/coffee.png);
 	}
 	&.google {
@@ -390,7 +530,7 @@ footer {
 
 
 .logo + h4 {
-	margin-top: 8px;
+	margin-top: 20px;
 }
 
 
@@ -416,7 +556,7 @@ h3 + .setting {
 }
 
 .exclamation {
-	font-family: helvetica, arial, sans-serif;
+	font-family: courier new, courier, monospace;
 }
 
 .red {
@@ -448,58 +588,82 @@ h3 + .setting {
 	span {
 		font-weight: bold;
 	}
+	
+	@media screen and (max-width: $big-screen) {
+		position: relative;
+		top: 0;
+		margin-top: 30px;
+	}
 }
 
 .code_label {
 	position: absolute;
+	top: 30px;
 	color: $white;
 	font-family: $quicksand;
 	font-size: .75em;
 	line-height: 1.3em;
 	text-transform: uppercase;
 	
-	i {
-		margin-left: -23px;	
+	&:before {
+		margin: 0 13px 0 -25px;
+		font-family: "fontello";
+		content: '\e800';
+	}	
+	
+	&:nth-of-type(even):before {
+		content: '\e801';
+	}
+
+	&:nth-of-type(even) {
+		top: 107px;
+		width: 230px;
 	}
 	
+	&:nth-of-type(1):before {
+		color: $red;
+	}
+	
+	&:nth-of-type(2):before {
+		color: $green;
+	}
+	
+	&:nth-of-type(3):before {
+		color: $purple;
+	}
+	
+	&:nth-of-type(4):before {
+		color: $blue;
+	}
+	
+	@media screen and (max-width: $big-screen) {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+		width: auto !important;
+		margin-left: 25px;
+		&:before, &:nth-of-type(even):before {
+			content: "●";
+			font-size: 1.2em;
+		}
+	}
+}
+
+.js.code_example .code_label {
 	&:nth-of-type(1) {
-		top: 30px;
 		left: 254px;
 	}
 	
 	&:nth-of-type(2) {
-		top: 107px;
 		left: 353px;
 	}
 	
 	&:nth-of-type(3) {
-		top: 30px;
 		left: 597px;
 	}
 	
 	&:nth-of-type(4) {
-		top: 107px;
 		left: 700px;
-	}
-	
-	&:nth-of-type(2), &:nth-of-type(4) {
-		width: 230px;
-	}
-	
-	.red {
-		color: $red;
-	}
-	
-	.green {
-		color: $green;
-	}
-	
-	.purple {
-		color: $purple;
-	}
-	
-	.blue {
-		color: $blue;
 	}
 }
 
