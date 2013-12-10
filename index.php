@@ -54,7 +54,7 @@
 			</ul>
 			<div class="download_buttons">
 				<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
-				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.4.zip">Download cinch 0.4</a>
+				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.5.zip">Download cinch 0.5</a>
 			</div>
 		</div>
 	</nav>
@@ -81,11 +81,7 @@
 				
 				<div class="google logo"></div>
 				<h4>Google Hosted Libraries</h4>
-				<p>Built-in access to all libraries in <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Libraries</a> service.</p>				
-<!--
-				<div class="auto logo"></div>
-				<h4>Everything Automatic</h4>
--->
+				<p>Built-in access to tons of common libraries, such as jQuery, Prototype, and more in <a href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a>, CSS frameworks such as <a href="http://foundation.zurb.com/">Foundation</a> and <a href="http://960.gs/">960.gs</a>, and a variety of javascript plugins. See the entire list <a href="#libraries">below</a>.</p>
 
 				<p></p>
 			</div>
@@ -126,7 +122,7 @@
 			<h2 id="how_to_use">How to Use Cinch</h2>
 			<p>To install, just:</p>
 			<ol>
-				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.4.zip">cinch</a> to the root folder of your site</li>
+				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.5.zip">cinch</a> to the root folder of your site</li>
 				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder</li>
 				<li>add your filenames</li>
 			</ol>
@@ -193,7 +189,7 @@
 			<p class="caption">In this example, &lsquo;scripts.js&rsquo; will be minified, but &lsquo;plugin.min.js&rsquo; will not.</p>
 			
 			
-			<h4 class="setting">[library-name/version]</h4>
+			<h4 id="libraries" class="setting">[library-name/version]</h4>
 			
 			<p>To include a library from <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Library</a> selection, enclose the name of the library and the version number in a pair of square brackets, separated by a forward slash (/).</p>
 			
@@ -201,7 +197,46 @@
 			
 			<code>src="/cinch/?files=<b class="red">[jquery/1.10.2]</b>"</code>
 			
-			<p class="caption">Available libraries are: &lsquo;angularjs&rsquo;, &lsquo;chrome-frame&rsquo;, &lsquo;dojo&rsquo;, &lsquo;ext-core&rsquo;, &lsquo;jquery&rsquo;, &lsquo;jqueryui&rsquo;, &lsquo;mootools&rsquo;, &lsquo;prototype&rsquo;, &lsquo;scriptaculous&rsquo;, &lsquo;swfobject&rsquo;, and &lsquo;webfont&rsquo;. Check Google&rsquo;s <a href="https://developers.google.com/speed/libraries/devguide">Developer Guide</a> for more information on these libraaries and what versions are available.</p>
+			<h6>Available libraries include (default version in paratheses):</h6>
+			
+			<p class="libraries">
+				<span><strong><a href="https://raw.github.com/nathansmith/960-Grid-System/master/code/css/960.css">960gs</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js">angularjs</a></strong> (1.2.4)</span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js">chrome-frame</a></strong> (1.0.3)</span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js">dojo</a></strong> (1.9.1)</span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js">ext-core</a></strong> (3.1.0)</span>,
+				<span><strong><a href="https://raw.github.com/davatron5000/FitText.js/master/jquery.fittext.js">fittext</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/davatron5000/Foldy960/master/style.css">foldy960</a></strong></span>,
+				<span><strong><a href="http://foundation.zurb.com/">foundation-css</a></strong> (5.0.2)</span>,
+				<span><strong><a href="http://foundation.zurb.com/">foundation-js</a></strong> (5.0.2)</span>,
+				<span><strong><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">html5shiv</a></strong></span>,
+				<span><strong><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">html5shim</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/desandro/isotope/master/css/style.css">isotope-css</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/desandro/isotope/master/jquery.isotope.min.js">isotope-js</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">jquery</a></strong> (1.10.2)</span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js">jqueryui</a></strong> (1.10.3)</span>,
+				<span><strong><a href="http://imperavi.com/css/kube.css">kube</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/davatron5000/Lettering.js/master/jquery.lettering.js">lettering</a></strong></span>,
+				<span><strong><a href="http://masonry.desandro.com/masonry.pkgd.min.js">masonry</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/barrel/mixitup/master/jquery.mixitup.min.js">mixitup</a></strong></span>,
+				<span><strong><a href="http://modernizr.com/downloads/modernizr-latest.js">modernizr</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js">mootools</a></strong> (1.4.5)</span>,
+				<span><strong><a href="http://necolas.github.io/normalize.css/2.1.3/normalize.css">normalize</a></strong> (2.1.3)</span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js">prototype</a></strong> (1.7.1.0)</span>,
+				<span><strong><a href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">pure</a></strong> (0.3.0)</span>,
+				<span><strong><a href="http://reset5.googlecode.com/hg/reset.min.css">reset5</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/viljamis/ResponsiveSlides.js/master/responsiveslides.css">responsiveslides-css</a></strong></span>,
+				<span><strong><a href="https://raw.github.com/viljamis/ResponsiveSlides.js/master/responsiveslides.min.js">responsiveslides-js</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js">scriptaculous</a></strong> (1.9.0)</span>,
+				<span><strong><a href="http://www.getskeleton.com/">skeleton</a></strong> (1.2)</span>,
+				<span><strong><a href="http://www.getskeleton.com/">skeleton-grid</a></strong> (1.2)</span>,
+				<span><strong><a href="https://raw.github.com/markdalgleish/stellar.js/master/jquery.stellar.min.js">stellar</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js">swfobject</a></strong> (2.2)</span>,
+				<span><strong><a href="https://raw.github.com/imakewebthings/jquery-waypoints/master/waypoints.min.js">waypoints</a></strong></span>,
+				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/webfont/1.5.0/webfont.js">webfont</a></strong> (1.5.0)</span>,
+				<span><strong><a href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">yui-reset</a></strong> (3.14.0)</p></span>
+
+			</p>
 			
 	
 			<h3>Optional</h3>
@@ -220,15 +255,7 @@
 			<p>Enables/disables minification on files.</p>
 			
 			<p><span class="note">NOTE</span>: Files marked with a &lsquo;!&rsquo; will not be minified regardless of this setting&rsquo;s value.</p>
-			
-			
-			<h4 class="setting">clearcache=(true|<span class="default">false</span>)</h4>
-			<p>Deletes all cache files on the server.</p> 
-			
-			<p><span class="note">NOTE</span>: This option can be run independently without a files list from the browser to clear the cache without coding it into an HTML link (eg. http://example.com/cinch/?clearcache=true).</p>
-			<p><span class="note">NOTE</span>: A cache file is created for every combination of JS/CSS sent to cinch, and they are not automatically deleted. If you are making frequent changes, it may be desirable to clear this folder from time to time. Alternately, the files can be deleted manually and will be rebuilt automatically during the next page load.</p>
-			
-			
+						
 			<h4 class="setting">debug=(true|<span class="default">false</span>)</h4>
 			<p>When enabled, output files display filenames and errors. Otherwise, errors are ignored and hidden.</p>
 			
