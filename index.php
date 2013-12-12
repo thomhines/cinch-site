@@ -23,10 +23,10 @@
 <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png" />
 
 
-<script type="text/javascript" src="/cinch/cinch/?files=[jquery/1.10.2],!/js/jquery.scrollTo-1.4.3.1-min.js,/js/jquery.sticky.js,/js/scripts.js&force=true&debug=true"></script>
+<script type="text/javascript" src="/cinch/cinch/?files=[jquery],!/js/jquery.scrollTo-1.4.3.1-min.js,/js/jquery.sticky.js,/js/scripts.js&debug=true"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Antic+Slab|Quicksand:400,700' rel='stylesheet' type='text/css'>
-<link rel="Stylesheet" href="/cinch/cinch/?files=/css/reset.css,/css/fontello.css,/css/style.scss&force=true&debug=true" type="text/css" media="all" />
+<link rel="Stylesheet" href="/cinch/cinch/?files=[reset],/css/fontello.css,/css/style.scss&debug=true" type="text/css" media="all" />
 
 
 <!--[if lt IE 9]>
@@ -146,16 +146,16 @@
 
 			<h6>Javascript:</h6>
 			<div class="code_example js">
-				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery/1.10.2]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=true</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
+				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=true</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
 				<div class="code_label">list of .JS files</div>
-				<div class="code_label">include jquery from the Google libraries</div>
+				<div class="code_label">include jQuery from an external library</div>
 				<div class="code_label">turn off minification</div>
 				<div class="code_label">turn on debug output</div>
 			</div>
 			
 			<h6>CSS:</h6>
 			<div class="code_example css">
-				<code>&lt;link href="/cinch/?<span class="red">files=/css/reset.css,</span><span class="green">!</span><span class="red">/css/layout.</span><span class="purple">less</span><span class="red">,/css/text.sass</span>&<span class="blue">force=true</span>" type="text/css"&gt;</code>
+				<code>&lt;link href="/cinch/?<span class="red">files=[normalize],</span><span class="green">!</span><span class="red">/css/layout.</span><span class="purple">less</span><span class="red">,/css/text.scss</span>&<span class="blue">force=true</span>" type="text/css"&gt;</code>
 				<div class="code_label">list of .CSS files</div>
 				<div class="code_label">use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
 				<div class="code_label">it's ok to mix different file types</div>
