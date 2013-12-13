@@ -40,7 +40,7 @@
 	<header>
 		<div class="container">
 			<h1>cinch</h1>
-			<h2 class="tagline">A simple, streamlined way to combine, compress, and cache web files</h2>
+			<h2 class="tagline">A simple, streamlined way to combine, compress, and cache web files!!!</h2>
 		</div>
 	</header>
 	
