@@ -270,9 +270,10 @@
 			<div class="column">
 				<h3>Special Thanks</h3>
 				<p>A lot of the heavy lifting in cinch was made possible by the work of others:</p>
-	
-				<h4><a href="http://razorsharpcode.blogspot.com/2010/02/lightweight-javascript-and-css.html">JS minification</a></h4>
-				<p>found at <a href="http://razorsharpcode.blogspot.com/">Razor-Sharp Code</a></p>
+				
+				<h4>JS minification</h4>
+				<p>Nicolas Martin's <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP port</a> of Dean Edward's <a href="http://dean.edwards.name/packer/">Packer</a></p>
+				<p>A handy PHP script found at <a href="http://razorsharpcode.blogspot.com/2010/02/lightweight-javascript-and-css.html">Razor-Sharp Code</a></p>
 				
 				<h4><a href="http://leafo.net/lessphp/">LESS</a>/<a href="http://leafo.net/scssphp/">SCSS</a> Processing</h4>
 				<p>by <a href="http://leafo.net/">leafo</a></p>
@@ -286,7 +287,7 @@
 	
 				<h4>Core functionality<br>
 				<span>(minification and concatenization)</span><br>
-				PHP 4.3+</h4>
+				PHP 5+</h4>
 				
 				<h4>Sass/SCSS Parser<br>
 				5.1+ <span>(Maybe? This is just a guess)</span></h4>
