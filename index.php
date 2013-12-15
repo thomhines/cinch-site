@@ -22,11 +22,11 @@
 <meta name="msapplication-TileColor" content="#da532c" />
 <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png" />
 
-
-<script type="text/javascript" src="/cinch/cinch/?files=[jquery],!/js/jquery.scrollTo-1.4.3.1-min.js,/js/jquery.sticky.js,/js/scripts.js&debug=true"></script>
+<?php $relpath = dirname($_SERVER['PHP_SELF']); ?>
+<script type="text/javascript" src="<?= $relpath ?>/cinch/?files=[jquery],/js/jquery.sticky.js,!/js/jquery.scrollTo-1.4.3.1-min.js,/js/scripts.js&debug=true"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Antic+Slab|Quicksand:400,700' rel='stylesheet' type='text/css'>
-<link rel="Stylesheet" href="/cinch/cinch/?files=[reset],/css/fontello.css,/css/style.scss&debug=true" type="text/css" media="all" />
+<link rel="Stylesheet" href="<?= $relpath ?>/cinch/?files=[cssreset],/css/fontello.css,/css/style.scss&debug=true" type="text/css" media="all" />
 
 
 <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
 	<header>
 		<div class="container">
 			<h1>cinch</h1>
-			<h2 class="tagline">A simple, streamlined way to combine, compress, and cache web files!!!</h2>
+			<h2 class="tagline">A simple, streamlined way to combine, compress, and cache web files</h2>
 		</div>
 	</header>
 	
@@ -59,11 +59,13 @@
 		</div>
 	</nav>
 	
+	<section class="description">
+		<div class="container">
+			<h4>Cinch is a PHP plugin that allows developers to minify and combine all of their Javascript & CSS files, reducing file sizes and making web pages load faster&mdash;<u>automatically</u>.</h4>
+		</div>
+	</section>
 	<section>
 		<div class="container">
-		
-			<h4 class="description">Cinch is a PHP plugin that allows developers to minify and combine all of their Javascript & CSS files, reducing file sizes and making web pages load faster&mdash;<u>automatically</u>.</h4>
-			
 			<!-- FEATURES -->
 			<h2 id="features">Features</h2>
 			
@@ -115,9 +117,11 @@
 				<h4>GZIP Compression</h4>
 				<p>Cinch uses gzip when available to compress files even further before sending them to users.</p>
 			</div>
+		</div>
+		</section>
 			
-			
-			
+		<section class="how_to_use">
+		<div class="container">	
 			<!-- HOW TO USE -->
 			<h2 id="how_to_use">How to Use Cinch</h2>
 			<p>To install, just:</p>
@@ -132,7 +136,7 @@
 			
 			<code>&lt;script src="<b>/js/jquery.min.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>&lt;script src="<b>/js/functions.js</b>" type="text/javascript"&gt;&lt;/script&gt;<br>&lt;script src="<b>/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
 		
-			<p>turns into:</p>
+			<p>looks like this in cinch:</p>
 			
 			<code>&lt;script src="<b class="red">/cinch/?files=/js/jquery.min.js,/js/functions.js,/js/scripts.js</b>" type="text/javascript"&gt;&lt;/script&gt;</code>
 			
@@ -161,6 +165,11 @@
 				<div class="code_label">it's ok to mix different file types</div>
 				<div class="code_label">force cinch to always rebuild cache</div>
 			</div>
+		</div>
+		</section>
+			
+		<section class="settings">
+		<div class="container">	
 			
 			
 			
@@ -191,51 +200,47 @@
 			
 			<h4 id="libraries" class="setting">[library-name/version]</h4>
 			
-			<p>To include a library from <a href="https://developers.google.com/speed/libraries/">Google&rsquo;s Hosted Library</a> selection, enclose the name of the library and the version number in a pair of square brackets, separated by a forward slash (/).</p>
+			<p>To include an external library from the list below, enclose the name of the library and the version number (optional) in a pair of square brackets, separated by a forward slash(/). If no version is given, the latest version of the libary will be used (as of when this was last updated).</p>
 			
-			<h6>Example</h6>
+			<h6>Examples</h6>
 			
 			<code>src="/cinch/?files=<b class="red">[jquery/1.10.2]</b>"</code>
+			
+			<code>src="/cinch/?files=<b class="red">[normalize]</b>"</code>
+			
 			
 			<h6>Available libraries include (default version in paratheses):</h6>
 			
 			<p class="libraries">
-				<span><strong><a href="https://raw.github.com/nathansmith/960-Grid-System/master/code/css/960.css">960gs</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js">angularjs</a></strong> (1.2.4)</span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js">chrome-frame</a></strong> (1.0.3)</span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/dojo/1.9.1/dojo/dojo.js">dojo</a></strong> (1.9.1)</span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/ext-core/3.1.0/ext-core.js">ext-core</a></strong> (3.1.0)</span>,
-				<span><strong><a href="https://raw.github.com/davatron5000/FitText.js/master/jquery.fittext.js">fittext</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/davatron5000/Foldy960/master/style.css">foldy960</a></strong></span>,
-				<span><strong><a href="http://foundation.zurb.com/">foundation-css</a></strong> (5.0.2)</span>,
-				<span><strong><a href="http://foundation.zurb.com/">foundation-js</a></strong> (5.0.2)</span>,
-				<span><strong><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">html5shiv</a></strong></span>,
-				<span><strong><a href="http://html5shiv.googlecode.com/svn/trunk/html5.js">html5shim</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/desandro/isotope/master/css/style.css">isotope-css</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/desandro/isotope/master/jquery.isotope.min.js">isotope-js</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">jquery</a></strong> (1.10.2)</span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js">jqueryui</a></strong> (1.10.3)</span>,
-				<span><strong><a href="http://imperavi.com/css/kube.css">kube</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/davatron5000/Lettering.js/master/jquery.lettering.js">lettering</a></strong></span>,
-				<span><strong><a href="http://masonry.desandro.com/masonry.pkgd.min.js">masonry</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/barrel/mixitup/master/jquery.mixitup.min.js">mixitup</a></strong></span>,
-				<span><strong><a href="http://modernizr.com/downloads/modernizr-latest.js">modernizr</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js">mootools</a></strong> (1.4.5)</span>,
-				<span><strong><a href="http://necolas.github.io/normalize.css/2.1.3/normalize.css">normalize</a></strong> (2.1.3)</span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/prototype/1.7.1.0/prototype.js">prototype</a></strong> (1.7.1.0)</span>,
-				<span><strong><a href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">pure</a></strong> (0.3.0)</span>,
-				<span><strong><a href="http://reset5.googlecode.com/hg/reset.min.css">reset5</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/viljamis/ResponsiveSlides.js/master/responsiveslides.css">responsiveslides-css</a></strong></span>,
-				<span><strong><a href="https://raw.github.com/viljamis/ResponsiveSlides.js/master/responsiveslides.min.js">responsiveslides-js</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.9.0/scriptaculous.js">scriptaculous</a></strong> (1.9.0)</span>,
-				<span><strong><a href="http://www.getskeleton.com/">skeleton</a></strong> (1.2)</span>,
-				<span><strong><a href="http://www.getskeleton.com/">skeleton-grid</a></strong> (1.2)</span>,
-				<span><strong><a href="https://raw.github.com/markdalgleish/stellar.js/master/jquery.stellar.min.js">stellar</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/swfobject/2.2/swfobject.js">swfobject</a></strong> (2.2)</span>,
-				<span><strong><a href="https://raw.github.com/imakewebthings/jquery-waypoints/master/waypoints.min.js">waypoints</a></strong></span>,
-				<span><strong><a href="https://ajax.googleapis.com/ajax/libs/webfont/1.5.0/webfont.js">webfont</a></strong> (1.5.0)</span>,
-				<span><strong><a href="http://yui.yahooapis.com/3.14.0/build/cssreset/cssreset-min.css">yui-reset</a></strong> (3.14.0)</p></span>
-
+				<strong><a href="http://960.gs/">960gs</a></strong> (1.0),
+				<strong><a href="http://angularjs.org/">angular</a></strong> (1.2.4),
+				<strong><a href="http://getbootstrap.com/">bootstrap-css</a></strong> (3.0.3),
+				<strong><a href="http://getbootstrap.com/">bootstrap-theme-css</a></strong> (3.0.3),
+				<strong><a href="http://getbootstrap.com/">bootstrap-js</a></strong> (3.0.3),
+				<strong><a href="https://developers.google.com/chrome/chrome-frame/">chrome-frame</a></strong> (1.0.3),
+				<strong><a href="http://meyerweb.com/eric/tools/css/reset/">cssreset</a></strong> (2.0),
+				<strong><a href="http://jquery.malsup.com/cycle2/">cycle2</a></strong> (20131022),
+				<strong><a href="http://dojotoolkit.org/">dojo</a></strong> (1.9.1),
+				<strong><a href="http://www.sencha.com/products/extcore/">ext-core</a></strong> (3.1.0),
+				<strong><a href="https://github.com/davatron5000/Foldy960">foldy960</a></strong> (1.0),
+				<strong><a href="http://foundation.zurb.com/">foundation-css</a></strong> (5.0.2),
+				<strong><a href="http://foundation.zurb.com/">foundation-js</a></strong> (5.0.2),
+				<strong><a href="https://code.google.com/p/html5shiv/">html5shiv</a></strong> (3.7.0),
+				<strong><a href="http://isotope.metafizzy.co/">isotope-css</a></strong> (1.2.25),
+				<strong><a href="http://isotope.metafizzy.co/">isotope-js</a></strong> (1.2.25),
+				<strong><a href="http://jquery.com/">jquery</a></strong> (1.10.2),
+				<strong><a href="http://jqueryui.com/">jqueryui</a></strong> (1.10.3),
+				<strong><a href="http://imperavi.com/kube/">kube</a></strong> (2.0.0),
+				<strong><a href="http://masonry.desandro.com/">masonry</a></strong> (3.1.3),
+				<strong><a href="http://modernizr.com/">modernizr</a></strong> (2.7.1),
+				<strong><a href="http://mootools.net/">mootools</a></strong> (1.4.5),
+				<strong><a href="http://necolas.github.io/normalize.css/">normalize</a></strong> (2.1.3),
+				<strong><a href="http://prototypejs.org/">prototype</a></strong> (1.7.1.0),
+				<strong><a href="http://purecss.io/">pure</a></strong> (0.3.0),
+				<strong><a href="http://script.aculo.us/">scriptaculous</a></strong> (1.9.0),
+				<strong><a href="https://code.google.com/p/swfobject/">swfobject</a></strong> (2.2),
+				<strong><a href="https://github.com/typekit/webfontloader">webfont</a></strong> (1.5.0),
+				<strong><a href="http://yuilibrary.com/yui/docs/cssreset/">yui-reset</a></strong> (3.14.0)
 			</p>
 			
 	
@@ -273,7 +278,7 @@
 				
 				<h4>JS minification</h4>
 				<p>Nicolas Martin's <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP port</a> of Dean Edward's <a href="http://dean.edwards.name/packer/">Packer</a></p>
-				<p>A handy PHP script found at <a href="http://razorsharpcode.blogspot.com/2010/02/lightweight-javascript-and-css.html">Razor-Sharp Code</a></p>
+				<p>And a concise, handy PHP script found at <a href="http://razorsharpcode.blogspot.com/2010/02/lightweight-javascript-and-css.html">Razor-Sharp Code</a></p>
 				
 				<h4><a href="http://leafo.net/lessphp/">LESS</a>/<a href="http://leafo.net/scssphp/">SCSS</a> Processing</h4>
 				<p>by <a href="http://leafo.net/">leafo</a></p>
