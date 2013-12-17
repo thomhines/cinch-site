@@ -1,5 +1,5 @@
 $(function() {
-
+	
 	$("nav").sticky();
 
 	// MAKE ALL INTERNAL LINKS SMOOTH SCROLLING	

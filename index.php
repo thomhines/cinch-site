@@ -54,7 +54,7 @@
 			</ul>
 			<div class="download_buttons">
 				<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
-				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.5.zip">Download cinch 0.5</a>
+				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.6.zip">Download cinch 0.6</a>
 			</div>
 		</div>
 	</nav>
@@ -118,15 +118,15 @@
 				<p>Cinch uses gzip when available to compress files even further before sending them to users.</p>
 			</div>
 		</div>
-		</section>
+	</section>
 			
-		<section class="how_to_use">
+	<section class="how_to_use">
 		<div class="container">	
 			<!-- HOW TO USE -->
 			<h2 id="how_to_use">How to Use Cinch</h2>
 			<p>To install, just:</p>
 			<ol>
-				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.5.zip">cinch</a> to the root folder of your site</li>
+				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.6.zip">cinch</a> to the root folder of your site</li>
 				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder</li>
 				<li>add your filenames</li>
 			</ol>
@@ -163,12 +163,12 @@
 				<div class="code_label">list of .CSS files</div>
 				<div class="code_label">use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
 				<div class="code_label">it's ok to mix different file types</div>
-				<div class="code_label">force cinch to always rebuild cache</div>
+				<div class="code_label">force cinch to rebuild cache every time</div>
 			</div>
 		</div>
-		</section>
+	</section>
 			
-		<section class="settings">
+	<section class="settings">
 		<div class="container">	
 			
 			
@@ -243,7 +243,6 @@
 				<strong><a href="http://yuilibrary.com/yui/docs/cssreset/">yui-reset</a></strong> (3.14.0)
 			</p>
 			
-	
 			<h3>Optional</h3>
 			<p>Settings can be adjusted by adding them to the query string in a &lt;script&gt; or &lt;link&gt; tag, separated by an ampersand (&amp;).</p>
 			<p class="caption">*Values marked in red are the default and will be used if no value is given.</p>
@@ -256,36 +255,45 @@
 			<p>Forces cinch to rebuild the cache and update the user&rsquo;s browser with the newest code on every page load, even if no changes have been detected</p>
 			
 			
-			<h4 class="setting">min=(<span class="default">true</span>|false)</h4>
-			<p>Enables/disables minification on files.</p>
+			<h4 class="setting">min=(<span class="default">true</span>|false|pack)</h4>
+			<p>Adjusts minification/obfuscation settings on web files.</p>
 			
-			<p><span class="note">NOTE</span>: Files marked with a &lsquo;!&rsquo; will not be minified regardless of this setting&rsquo;s value.</p>
+			<p><span class="note">NOTE</span>: Files marked with an exclamation mark (!) will not be minified regardless of this setting&rsquo;s value.</p>
+			<p><span class="note">NOTE</span>: The 'pack' setting minifies <u>and</u> obfuscates files. This setting applies only to javascript files.</p>
 						
 			<h4 class="setting">debug=(true|<span class="default">false</span>)</h4>
-			<p>When enabled, output files display filenames and errors. Otherwise, errors are ignored and hidden.</p>
+			<p>When enabled, output files display filenames <u>and</u> errors. Otherwise, errors are ignored and hidden.</p>
 			
 			<div class="cinchicon"></div>
 		</div>
 	</section>
 	
+	<section class="goodies">
+		<div class="container">
+			<h2 id="about">Other Notes and Goodies</h2>
+			<ul>
+				<li>
+					<a href="http://bourbon.io/">Bourbon</a> and <a href="http://neat.bourbon.io/">Bourbon Neat</a> mixins library has been packaged with cinch, and can be added by using an '@import' inside your Sass files, like so:
+					<code>@import 'path/to/cinch/libraries/bourbon/bourbon';</code>
+					<code>@import 'path/to/cinch/libraries/neat/neat';</code>
+				</li>
+				<li>
+					CSS vendor prefixes are added automatically, along with smart CSS minification, color conversions, and more, thanks to <a href='https://github.com/javiermarinros'>Javier Marín's</a> css_optimizer. No need to write 5 lines of CSS to accommodate each browser anymore.
+				</li>
+				<li>
+					A separate cache file is created for each combination of JS/CSS files that you use, so that different pages with different requirements can still run as quickly as possible. In order to prevent this folder from being overloaded on a busy development server, the cache is automatically cleared about once a month.
+				</li>
+			</ul>
+	
+		</div>
+	</section>
+	
+	
+	
 	<!-- ABOUT -->
 	<footer>
 		<div class="container">
 			<h2 id="about">About</h2>
-			<div class="column">
-				<h3>Special Thanks</h3>
-				<p>A lot of the heavy lifting in cinch was made possible by the work of others:</p>
-				
-				<h4>JS minification</h4>
-				<p>Nicolas Martin's <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP port</a> of Dean Edward's <a href="http://dean.edwards.name/packer/">Packer</a></p>
-				<p>And a concise, handy PHP script found at <a href="http://razorsharpcode.blogspot.com/2010/02/lightweight-javascript-and-css.html">Razor-Sharp Code</a></p>
-				
-				<h4><a href="http://leafo.net/lessphp/">LESS</a>/<a href="http://leafo.net/scssphp/">SCSS</a> Processing</h4>
-				<p>by <a href="http://leafo.net/">leafo</a></p>
-				
-				<h4><a href="https://github.com/alxlit/coffeescript-php">CoffeeScript</a> Processing</h4>
-				<p>by alxlit</p>
-			</div>
 			<div class="column">
 				<h3>Requirements</h3>
 				<p>Each dependency is loaded only when necessary, and each has it&rsquo;s own level of requirements.
@@ -302,6 +310,23 @@
 				
 				<h4>CoffeeScript Parser<br>
 				PHP 5.3+</h4>
+			</div>
+			<div class="column">
+				<h3>Special Thanks</h3>
+				<p>A lot of the heavy lifting in cinch was made possible by the work of others:</p>
+				
+				<h4>CSS Processing/Minification</h4>
+				<p><a href="https://github.com/javiermarinros/css_optimizer">css_optimizer</a> by <a href='https://github.com/javiermarinros'>Javier Marín</a></p>
+				
+				<h4>JS minification</h4>
+				<p>Nicolas Martin's <a href="http://joliclic.free.fr/php/javascript-packer/en/">PHP port</a> of Dean Edward's <a href="http://dean.edwards.name/packer/">Packer</a></p>
+				<p>And Jakub Vrána's <a href="https://github.com/vrana/JsShrink/">JsShrink</a></p>
+				
+				<h4><a href="http://leafo.net/lessphp/">LESS</a>/<a href="http://leafo.net/scssphp/">SCSS</a> Processing</h4>
+				<p>by <a href="http://leafo.net/">leafo</a></p>
+				
+				<h4><a href="https://github.com/alxlit/coffeescript-php">CoffeeScript</a> Processing</h4>
+				<p>by alxlit</p>
 			</div>
 			<div class="column">
 				
