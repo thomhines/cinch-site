@@ -23,10 +23,10 @@
 <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png" />
 
 <?php $relpath = dirname($_SERVER['PHP_SELF']); ?>
-<script type="text/javascript" src="<?= $relpath ?>/cinch/?files=[jquery],/js/jquery.sticky.js,!/js/jquery.scrollTo-1.4.3.1-min.js,/js/scripts.js&debug=true"></script>
+<script type="text/javascript" src="<?= $relpath ?>/cinch/?files=[jquery],[jquery-scrollto],/js/jquery.sticky.js,/js/scripts.js"></script>
 
 <link href='http://fonts.googleapis.com/css?family=Antic+Slab|Quicksand:400,700' rel='stylesheet' type='text/css'>
-<link rel="Stylesheet" href="<?= $relpath ?>/cinch/?files=[cssreset],/css/fontello.css,/css/style.scss&debug=true" type="text/css" media="all" />
+<link rel="Stylesheet" href="<?= $relpath ?>/cinch/?files=[cssreset],/css/fontello.css,/css/style.scss" type="text/css" media="all" />
 
 
 <!--[if lt IE 9]>
@@ -35,7 +35,6 @@
 </head>
 
 <body>
-<?php include_once('ga.php'); ?>
 
 	<header>
 		<div class="container">
@@ -79,7 +78,7 @@
 				<div class="sass logo"><a href="http://sass-lang.com/">Sass</a></div>
 				<div class="coffeescript logo"><a href="http://coffeescript.org/">CoffeeScript</a></div>
 				<h4>Pre-Processor Handling</h4>
-				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript.</p>
+				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript. Plus, with the use of <a href='https://github.com/javiermarinros'>Javier Marín's</a> css_optimizer, dealing with pesky CSS annoyances like vendor prefixes are a thing of the past.</p>
 				
 				<div class="google logo"></div>
 				<h4>Google Hosted Libraries</h4>
@@ -252,7 +251,7 @@
 			
 			
 			<h4 class="setting">force=(true|<span class="default">false</span>)</h4>
-			<p>Forces cinch to rebuild the cache and update the user&rsquo;s browser with the newest code on every page load, even if no changes have been detected</p>
+			<p>Forces cinch to rebuild the cache and update the user&rsquo;s browser with the newest code on every page load, even if no changes have been detected.</p>
 			
 			
 			<h4 class="setting">min=(<span class="default">true</span>|false|pack)</h4>
@@ -261,8 +260,8 @@
 			<p><span class="note">NOTE</span>: Files marked with an exclamation mark (!) will not be minified regardless of this setting&rsquo;s value.</p>
 			<p><span class="note">NOTE</span>: The 'pack' setting minifies <u>and</u> obfuscates files. This setting applies only to javascript files.</p>
 						
-			<h4 class="setting">debug=(true|<span class="default">false</span>)</h4>
-			<p>When enabled, output files display filenames <u>and</u> errors. Otherwise, errors are ignored and hidden.</p>
+			<h4 class="setting">debug=(<span class="default">true</span>|false)</h4>
+			<p>When enabled, output files display filenames <i>and</i> errors. Otherwise, errors are ignored and all extra annotations are hidden.</p>
 			
 			<div class="cinchicon"></div>
 		</div>
@@ -340,6 +339,16 @@
 			</div>
 		</div>
 	</footer>
+
+<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	ga('create', 'UA-46006559-1', 'thomhines.com');
+	ga('send', 'pageview');
+</script>
 
 </body>
 
