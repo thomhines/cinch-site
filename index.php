@@ -53,7 +53,7 @@
 			</ul>
 			<div class="download_buttons">
 				<a class="github" href="https://github.com/thomhines/cinch">Fork me on GitHub</a>
-				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.6.zip">Download cinch 0.6</a>
+				<a class="download button" href="https://github.com/thomhines/cinch/archive/0.7.zip">Download cinch 0.7</a>
 			</div>
 		</div>
 	</nav>
@@ -81,8 +81,8 @@
 				<p>Automatically converts JS and CSS pre-processor formats such as Sass, SCSS, Less and CoffeeScript. Plus, with the use of <a href='https://github.com/javiermarinros'>Javier Marín's</a> css_optimizer, dealing with pesky CSS annoyances like vendor prefixes are a thing of the past.</p>
 				
 				<div class="google logo"></div>
-				<h4>Google Hosted Libraries</h4>
-				<p>Built-in access to tons of common libraries, such as jQuery, Prototype, and more in <a href="https://developers.google.com/speed/libraries/">Google Hosted Libraries</a>, CSS frameworks such as <a href="http://foundation.zurb.com/">Foundation</a> and <a href="http://960.gs/">960.gs</a>, and a variety of javascript plugins. See the entire list <a href="#libraries">below</a>.</p>
+				<h4>Easy Access Libraries</h4>
+				<p>Built-in access to tons of common libraries and frameworks such as <a href="http://jquery.com/">jQuery</a>, <a href="http://prototypejs.org/">Prototype</a>, <a href="http://960.gs/">Bootstrap</a> and a bunch more, all available just by calling their name (in code, of course). See the entire list <a href="#libraries">below</a>.</p>
 
 				<p></p>
 			</div>
@@ -110,11 +110,11 @@
 				
 				<div class="minify logo"></div>
 				<h4>Minification</h4>
-				<p>Minifying files gets rid of all unneccesary parts of your files, decreasing the amount of bandwidth and time needed to download them.</p>
+				<p>Minifying files gets rid of all unnecessary white space and comments in your files, decreasing the amount of bandwidth and time needed to download them.</p>
 				
 				<div class="gzip logo"></div>
 				<h4>GZIP Compression</h4>
-				<p>Cinch uses gzip when available to compress files even further before sending them to users.</p>
+				<p>Cinch uses gzip when available to compress files even further before sending them to your users.</p>
 			</div>
 		</div>
 	</section>
@@ -125,7 +125,7 @@
 			<h2 id="how_to_use">How to Use Cinch</h2>
 			<p>To install, just:</p>
 			<ol>
-				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.6.zip">cinch</a> to the root folder of your site</li>
+				<li>upload <a href="https://github.com/thomhines/cinch/archive/0.7.zip">cinch</a> to the root folder of your site</li>
 				<li>replace the links in your &lt;script&gt; and &lt;link&gt; tags with a URL that points to your &lsquo;cinch&rsquo; folder</li>
 				<li>add your filenames</li>
 			</ol>
@@ -149,18 +149,18 @@
 
 			<h6>Javascript:</h6>
 			<div class="code_example js">
-				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=true</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
+				<code>&lt;script src="/cinch/?<span class="red">files=</span><span class="green">[jquery]</span><span class="red">,/js/ajax.js</span>&<span class="purple">min=false</span>&<span class="blue">debug=false</span>" type="text/javascript"&gt;&lt;/script&gt;</code>
 				<div class="code_label">list of .JS files</div>
 				<div class="code_label">include jQuery from an external library</div>
 				<div class="code_label">turn off minification</div>
-				<div class="code_label">turn on debug output</div>
+				<div class="code_label">turn off debug output</div>
 			</div>
 			
 			<h6>CSS:</h6>
 			<div class="code_example css">
 				<code>&lt;link href="/cinch/?<span class="red">files=[normalize],</span><span class="green">!</span><span class="red">/css/layout.</span><span class="purple">less</span><span class="red">,/css/text.scss</span>&<span class="blue">force=true</span>" type="text/css"&gt;</code>
 				<div class="code_label">list of .CSS files</div>
-				<div class="code_label">use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a file</div>
+				<div class="code_label">use &lsquo;<span class="exclamation">!</span>&rsquo; to disable minification on a specific file</div>
 				<div class="code_label">it's ok to mix different file types</div>
 				<div class="code_label">force cinch to rebuild cache every time</div>
 			</div>
@@ -211,35 +211,16 @@
 			<h6>Available libraries include (default version in paratheses):</h6>
 			
 			<p class="libraries">
-				<strong><a href="http://960.gs/">960gs</a></strong> (1.0),
-				<strong><a href="http://angularjs.org/">angular</a></strong> (1.2.4),
-				<strong><a href="http://getbootstrap.com/">bootstrap-css</a></strong> (3.0.3),
-				<strong><a href="http://getbootstrap.com/">bootstrap-theme-css</a></strong> (3.0.3),
-				<strong><a href="http://getbootstrap.com/">bootstrap-js</a></strong> (3.0.3),
-				<strong><a href="https://developers.google.com/chrome/chrome-frame/">chrome-frame</a></strong> (1.0.3),
-				<strong><a href="http://meyerweb.com/eric/tools/css/reset/">cssreset</a></strong> (2.0),
-				<strong><a href="http://jquery.malsup.com/cycle2/">cycle2</a></strong> (20131022),
-				<strong><a href="http://dojotoolkit.org/">dojo</a></strong> (1.9.1),
-				<strong><a href="http://www.sencha.com/products/extcore/">ext-core</a></strong> (3.1.0),
-				<strong><a href="https://github.com/davatron5000/Foldy960">foldy960</a></strong> (1.0),
-				<strong><a href="http://foundation.zurb.com/">foundation-css</a></strong> (5.0.2),
-				<strong><a href="http://foundation.zurb.com/">foundation-js</a></strong> (5.0.2),
-				<strong><a href="https://code.google.com/p/html5shiv/">html5shiv</a></strong> (3.7.0),
-				<strong><a href="http://isotope.metafizzy.co/">isotope-css</a></strong> (1.2.25),
-				<strong><a href="http://isotope.metafizzy.co/">isotope-js</a></strong> (1.2.25),
-				<strong><a href="http://jquery.com/">jquery</a></strong> (1.10.2),
-				<strong><a href="http://jqueryui.com/">jqueryui</a></strong> (1.10.3),
-				<strong><a href="http://imperavi.com/kube/">kube</a></strong> (2.0.0),
-				<strong><a href="http://masonry.desandro.com/">masonry</a></strong> (3.1.3),
-				<strong><a href="http://modernizr.com/">modernizr</a></strong> (2.7.1),
-				<strong><a href="http://mootools.net/">mootools</a></strong> (1.4.5),
-				<strong><a href="http://necolas.github.io/normalize.css/">normalize</a></strong> (2.1.3),
-				<strong><a href="http://prototypejs.org/">prototype</a></strong> (1.7.1.0),
-				<strong><a href="http://purecss.io/">pure</a></strong> (0.3.0),
-				<strong><a href="http://script.aculo.us/">scriptaculous</a></strong> (1.9.0),
-				<strong><a href="https://code.google.com/p/swfobject/">swfobject</a></strong> (2.2),
-				<strong><a href="https://github.com/typekit/webfontloader">webfont</a></strong> (1.5.0),
-				<strong><a href="http://yuilibrary.com/yui/docs/cssreset/">yui-reset</a></strong> (3.14.0)
+				<?php 
+				// GET LIST OF LIBRARIES FROM LIBRARIES.PHP
+				$libraries = json_decode(file_get_contents('cinch/libraries.json'), true);
+				foreach($libraries as $library_name => $library) {
+					$library['url'] =  str_replace('{version}', $library['ver'], $library['url']);
+				?>
+					
+					<a href="<?php echo $library['url']; ?>"><?php echo $library_name; ?></a></strong> (<?php echo $library['ver']; ?>)<br>
+				
+				<?php } ?>
 			</p>
 			
 			<h3>Optional</h3>
@@ -272,9 +253,7 @@
 			<h2 id="about">Other Notes and Goodies</h2>
 			<ul>
 				<li>
-					<a href="http://bourbon.io/">Bourbon</a> and <a href="http://neat.bourbon.io/">Bourbon Neat</a> mixins library has been packaged with cinch, and can be added by using an '@import' inside your Sass files, like so:
-					<code>@import 'path/to/cinch/libraries/bourbon/bourbon';</code>
-					<code>@import 'path/to/cinch/libraries/neat/neat';</code>
+					The <a href="http://bourbon.io/">Bourbon</a> mixins library has been packaged with cinch, and will automatically be imported into your Sass files on execution. If you don't need them, no problem; the only extra bulk it will add to your stylesheets will be based on which mixins you use.
 				</li>
 				<li>
 					CSS vendor prefixes are added automatically, along with smart CSS minification, color conversions, and more, thanks to <a href='https://github.com/javiermarinros'>Javier Marín's</a> css_optimizer. No need to write 5 lines of CSS to accommodate each browser anymore.

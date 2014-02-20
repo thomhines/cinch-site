@@ -18,8 +18,6 @@ $(function() {
 	$('a[href="https://github.com/thomhines/cinch"]').click(function() {
 		console.log('github...');
 		ga('send', 'event', 'button', 'click', 'github');
-
-		
 	});
 
-})
+});

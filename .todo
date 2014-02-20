@@ -1,4 +1,5 @@
 - integrate Bower or Composer package support
+- add better js debugging (jsLint?)
 - cache local versions of remote libraries
 - create longer list of remote libraries that don't need to be stored in cinch
 - Image compression (http://nielse63.github.io/php-image-cache/)
