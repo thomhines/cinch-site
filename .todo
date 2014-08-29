@@ -1,5 +1,4 @@
 - integrate Bower or Composer package support
-- add better js debugging (jsLint?)
-- cache local versions of remote libraries
+- add better js debugging (jsLint/Hint?)
 - Image compression (http://nielse63.github.io/php-image-cache/)
 - Make it compress and cache PHP pages

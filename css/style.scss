@@ -1,18 +1,34 @@
-$black: #29231F;
+//$black: #473E38;
+$black: #444;
 $gray: #918D8A;
-$white: #F1F0ED;
-$off-white: #F5DEB3;
+//$white: #F1F0ED;
+$white: #FAF9F7;
+//$off-white: #F5DEB3;
 $brown: #543B34;
-$orange: #E16940;
-$lt-orange: #EFAF5B;
+//$orange: #FF9A6E;
+//$lt-orange: #EFAF5B;
+
+//$orange: #D7FF82;
+//$lt-orange: #95C236;
+//$real-green: #8FC224;
+
+$orange: #73CAA7;
+$lt-orange: #96FFD5;
+$real-green: #73CAA7;
+
+//$off-white: #F6FFD0;
+$off-white: #D0FFDF;
+
 $yellow: #F8DF7B;
+
+
 $red: #D82C6B;
 $green: #40C022;
 $blue: #2D88B5;
 $purple: #9641F0;
 
 $antic: 'Antic Slab', serif;
-$quicksand: 'Quicksand', sans-serif;
+$sans_serif: 'Source Sans Pro', sans-serif;
 
 $big-screen: 1200px;
 $medium-screen: 900px;
@@ -20,15 +36,32 @@ $tablet: 768px;
 $mobile: 420px;
 
 
+* { 
+/* better box model */
+-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,p {
+/* enable kerning, ligatures and other typographic features */
+text-rendering: optimizeLegibility;
+font-feature-settings: "kern";
+-webkit-font-feature-settings: "kern";
+-moz-font-feature-settings: "kern";
+-moz-font-feature-settings: "kern=1";
+font-kerning: normal;	
+}
+
 body {
-	background: url(../img/darkdenim3.png);
+	/* background: url(../img/darkdenim3.png); */
+	background-color: $black;
 	color: $white;
 	font-family: $antic;
-	font-size: 19px;
+	font-size: 16px;
 	line-height: 1.5em;
+	overflow-x: hidden;
 	
 	@media screen and (min-width: $medium-screen) and (max-width: $big-screen) {
-		font-size: 17px;
+		font-size: 16px;
 		line-height: 1.5em;
 	}
 	@media screen and (min-width: $tablet) and (max-width: $medium-screen) {
@@ -51,6 +84,7 @@ h1 {
 	margin: 0 auto 2em;
 	background: url(../img/cinch.png) center center;
 	background-size: contain;
+	background-repeat: no-repeat;
 	text-indent: -9999px;
 	overflow: hidden;
 	
@@ -70,7 +104,7 @@ h1 {
 }
 
 h2, h3, h4 {
-	font-family: $quicksand
+	font-family: $sans_serif
 }
 
 h2 {
@@ -96,8 +130,9 @@ h3 {
 
 h4 {
 	margin-bottom: .2em;
+	font-size: 1.1em;
 	line-height: 1.2em;
-	font-weight: bold;
+	font-weight: normal;
 	text-transform: uppercase;
 }
 
@@ -112,7 +147,7 @@ h5 {
 }
 
 h6 {
-	font-family: $quicksand;
+	font-family: $sans_serif;
 	font-size: .75em;
 	font-weight: bold;
 	letter-spacing: .15em;
@@ -183,13 +218,20 @@ code {
 	letter-spacing: .04em;
 }
 
+code.inline {
+	display: inline;
+	padding: .4em;
+	color: $black;
+}
+
 code + h3 {
 	margin-top: 3em;
 }
 
 header {
 	padding: 2.5em;
-	background: url(../img/white_bed_sheet.png);
+/* 	background: url(../img/white_bed_sheet.png); */
+	background: $white;
 	color: $black;	
 }
 
@@ -197,14 +239,16 @@ nav {
 	width: 100%;
 	padding: .8em 0;
 	background: $black;
-	text-align: center;
 	z-index: 50;
 	box-shadow: 3px 3px 3px rgba(40,40,40,.4);
+	border-bottom: 3px solid $white;
 	
 	ul {
 		display: inline-block;
-		margin: 0 auto;
-		transition: all .15s ease-in-out;
+		margin: 0 0 0 50%;
+		transform: translateX(-50%);
+		transition: all .4s ease-in-out;
+		white-space: nowrap;
 	}
 	
 	li {
@@ -217,95 +261,104 @@ nav {
 			content: "";
 			margin: 0;
 		}
-		
-		@media screen and (max-width: $tablet) {
-			&:last-child {
-				display: none;
-			}
-		}
 	}
 	a {
 		padding: 1.1em;
-		font-family: $quicksand;
+		font-size: 1.1em;
+		font-family: $sans_serif;
 		color: $white;
 		text-decoration: none;
 		text-transform: uppercase;
-	}
-	
-	.download_buttons {
-		position: fixed;
-		top: 11px;
-		right: 50%;
-		margin-right: -560px;
-		padding: 0;
-		z-index: 100;
-		a {
-			display: inline-block;
-			padding: 0;
-			vertical-align: top;
-		}
-		@media screen and (max-width: $big-screen) {
-			right: 11px;
-			margin-right: 0;
-		}
-	}
-
-	a.download {
-		padding: 2px 16px;
-		font-size: .7em;
-		font-weight: bold;
-		color: $white;
-		border-radius: 5px;
-		@include linear-gradient(#E87047, #BD461D);
-			
-		&:hover {
-			color: $black;
-		}
-		
 		@media screen and (max-width: $tablet) {
-			font-size: 0;
-			&:before {
-				content: "download";
-				padding: 2px 4px;
-				font-size: .6rem;
-				vertical-align: bottom;
-			}
-		}
-	}
-	
-	.github {
-		width: 33px;
-		height: 33px;
-		margin-top: -1px;
-		background: url(../img/github.png);
-		background-size: contain;
-		text-indent: -9999px;
-		overflow: hidden;
-
-		border-radius: 16px;
-		&:hover {
-			background-color: $black;
-		}
-		@media screen and (max-width: $tablet) {
-			width: 24px;
-			height: 24px;
-			background-color: $white;
-			border-radius: 12px;
+			padding: .6em;
 		}
 		@media screen and (max-width: $mobile) {
-			width: 20px;
-			height: 20px;
-			background-color: $white;
-			border-radius: 10px;
+			padding: .3em;
+			font-size: .9em;
 		}
 	}
 }
+
+.download_buttons {
+	position: fixed;
+	top: 11px;
+	right: 50%;
+	margin-right: -560px;
+	padding: 0;
+	z-index: 100;
+	a {
+		display: inline-block;
+		padding: 0;
+		vertical-align: top;
+		font-family: $sans_serif;
+		text-transform: uppercase;
+	}
+	@media screen and (max-width: $big-screen) {
+		right: 11px;
+		margin-right: 0;
+	}
+	@media screen and (max-width: $tablet) {
+		position: absolute;
+	}
+
+}
+
+a.download {
+	padding: 3px 16px;
+	font-size: .9em;
+	color: $white;
+	border-radius: 5px;
+	//@include linear-gradient(#E87047, #BD461D);
+	background: $real-green;
+		
+	&:hover {
+		color: $black;
+	}
+	
+	@media screen and (max-width: $tablet) {
+		font-size: 0;
+		&:before {
+			content: "download";
+			padding: 2px 4px;
+			font-size: .6rem;
+			vertical-align: bottom;
+		}
+	}
+}
+
+.github {
+	width: 33px;
+	height: 33px;
+	margin-top: -1px;
+	background: url(../img/github.png);
+	background-size: contain;
+	text-indent: -9999px;
+	overflow: hidden;
+
+	border-radius: 16px;
+	&:hover {
+		background-color: $black;
+	}
+	@media screen and (max-width: $tablet) {
+		width: 24px;
+		height: 24px;
+		background-color: $white;
+		border-radius: 12px;
+	}
+	@media screen and (max-width: $mobile) {
+		width: 20px;
+		height: 20px;
+		background-color: $white;
+		border-radius: 10px;
+	}
+}
+
 
 
 .is-sticky {
 
 	nav {
-		text-align: left;		
+		text-align: left;
 		@media screen and (max-width: $mobile) {
 			position: relative !important;
 			text-align: center;
@@ -313,18 +366,27 @@ nav {
 	}
 
 	ul {
-		margin: 0 0 0 -20px;
+		@media screen and (min-width: $tablet) {
+			margin: 0 0 0 -20px;
+			transform: translateX(0%);
+		}
+	}
+
+	.download_buttons {	
+		@media screen and (max-width: $mobile) {
+			display: none;
+		}
 	}
 	
-	.download {
+	& + div .download {
 		color: $black;
 		&:hover {
 			color: $white;
 		}
 	}
 	
-	.github {
-		box-shadow: inset 0 0 0 1px #29231f, 0 0 0 1px #29231f;
+	& + div .github {
+		box-shadow: inset 0 0 0 1px $black, 0 0 0 1px $black;
 		&:hover {
 			background-color: $white;
 		}
@@ -358,7 +420,7 @@ nav {
 
 section {
 	padding: 60px 0;
-	border-bottom: 1px solid $orange;
+	border-bottom: 3px solid $orange;
 	@include clearfix;
 }
 
@@ -368,13 +430,18 @@ section {
 	color: $black;
 	
 	h4 {
-		padding: 200px 50px;
+		padding: 100px;
+		//max-width: 700px;
 		font-family: $antic;
 		font-size: 1.8em;
 		line-height: 1.6em;
 		font-weight: normal;
 		text-align: center;
 		text-transform: none;
+		
+		@media screen and (max-width: $medium-screen) {
+			padding: 20px;
+		}
 	}
 }
 
@@ -396,17 +463,37 @@ section {
 }
 
 .how_to_use, .goodies {
-	background: url(../img/white_bed_sheet.png);
+/* 	background: url(../img/white_bed_sheet.png); */
+	background: $white;
 	color: $black;
 	h2 {
 		color: $black + 20;
 		border-bottom-color: $black + 20;
 	}
+	
+	a {
+		color: $real-green * .7;
+	}
+	
+	a:hover {
+		color: $real-green * .5;
+	}
 }
 
 .goodies li {
-	margin-bottom: 2em;
-	list-style: circle;
+	margin: 0 0 2em 1em;
+	list-style: disc;
+	list-style-position: outside;
+}
+
+.goodies h5 {
+	cursor: pointer;
+	transition: all .15s ease-in-out;
+	color: $real-green * .7;
+}
+
+.goodies h5:hover {
+	color: $real-green * .5;
 }
 
 footer {
@@ -452,7 +539,14 @@ footer {
 			padding-bottom: .3em;
 		}
 	}
-
+	
+	h3 {
+		margin-bottom: .6em;
+		padding-bottom: 0.4em;
+		font-size: 1.5em;
+		text-align: center;
+	}
+	
 	@media screen and (max-width: $big-screen) {
 		width: 30%;
 		margin-left: 3%;
@@ -470,9 +564,23 @@ footer {
 	margin-left: 0;
 }
 
+.wide.column {
+	width: 550px;
+	text-align: left;
+	
+	p {
+		text-align: left;
+	}
+	
+	@media screen and (max-width: $big-screen) {
+		width: 94%;
+		margin-left: 3%;
+	}
+}
+
 .tagline {
 	color: $brown;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	text-align: center;
 	border-bottom: none;
 }
@@ -481,7 +589,7 @@ footer {
 .logo {
 	display: inline-block;
 	margin: 35px 5px 0;
-	padding-right: 80px;
+	padding-right: 20px;
 	background-repeat: no-repeat;
 	height: 47px;
 	
@@ -503,6 +611,13 @@ footer {
 		height: 65px;
 		background-image: url(../img/cake.png);		
 	}
+	&.reload {
+		width: 65px;
+		height: 64px;
+		margin-bottom: -20px;
+		background-image: url(../img/reload.png);	
+	}
+	
 	&.less, &.sass, &.coffeescript {
 		display: inline-block;
 		margin-left: 13px;
@@ -522,10 +637,10 @@ footer {
 		margin-top: 0;
 		background-image: url(../img/coffee.png);
 	}
-	&.google {
+	&.bower {
 		width: 57px;
-		height: 45px;
-		background-image: url(../img/google.png);		
+		height: 50px;
+		background-image: url(../img/bower.png);		
 	}
 	&.auto {
 		width: 58px;
@@ -571,10 +686,11 @@ footer {
 
 
 .setting {
-	margin-top: 45px;
-	color: $yellow;
+	margin-top: 65px;
+	color: $white;
 	font-size: 1.2em;
 	font-weight: normal;
+	text-transform: none;
 }
 
 h3 + .setting {
@@ -636,7 +752,7 @@ h3 + .setting {
 	position: absolute;
 	top: 30px;
 	color: $black;
-	font-family: $quicksand;
+	font-family: $sans_serif;
 	font-size: .75em;
 	line-height: 1.3em;
 	text-transform: uppercase;
@@ -653,7 +769,7 @@ h3 + .setting {
 
 	&:nth-of-type(even) {
 		top: 107px;
-		width: 250px;
+		width: 210px;
 	}
 	
 	&:nth-of-type(1):before {
@@ -687,19 +803,19 @@ h3 + .setting {
 
 .js.code_example .code_label {
 	&:nth-of-type(1) {
-		left: 254px;
+		left: 231px;
 	}
 	
 	&:nth-of-type(2) {
-		left: 327px;
+		left: 294px;
 	}
 	
 	&:nth-of-type(3) {
-		left: 530px;
+		left: 477px;
 	}
 	
 	&:nth-of-type(4) {
-		left: 631px;
+		left: 570px;
 	}
 }
 
@@ -709,15 +825,15 @@ h3 + .setting {
 	}
 	
 	&:nth-of-type(2) {
-		left: 399px;
+		left: 357px;
 	}
 	
 	&:nth-of-type(3) {
-		left: 538px;
+		left: 479px;
 	}
 	
 	&:nth-of-type(4) {
-		left: 756px;
+		left: 678px;
 	}
 	
 }
@@ -725,7 +841,7 @@ h3 + .setting {
 
 .caption {
 	margin-top: -4px;
-	font-size: .75em;
+	font-style: italic;
 	line-height: 1.5em;
 }
 
@@ -734,9 +850,10 @@ h3 + .setting {
 }
 
 .cinchicon {
+	clear: both;
 	width: 30px;
 	height: 30px;
-	margin: 60px auto;
-	background: url(../img/cinchicon.png);
-	box-shadow: 2px 2px 2px rgba(0,0,0,.5);
+	margin: auto;
+	padding: 40px;
+	background: url(../img/cinchicon.png) no-repeat center center;
 }
